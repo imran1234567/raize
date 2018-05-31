@@ -3737,7 +3737,7 @@ input[type=number]::-webkit-outer-spin-button {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%,15%);
+	transform: translate(-50%,-50%);
 	width: 100%;
 }
 .abov18 .custom-control-label::before {
