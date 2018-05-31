@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+
 {% load static %}
+
 {% block script %}
 <script>
 $(document).ready(function(){
@@ -18,19 +20,19 @@ $(document).ready(function(){
     <section>
       <!-- Slider -->
       <div class="main">
-				<ul id="cbp-bislideshow" class="cbp-bislideshow">
-					<li><img src="{% static 'images/hero-bg.jpg' %}" alt="image01"/></li>
-					<li><img src="images/hero-bg2.jpg" alt="image02"/></li>
-          <li><img src="images/hero-bg3.jpg" alt="image02"/></li>
-          <li><img src="images/hero-bg4.jpg" alt="image02"/></li>
-          <li><img src="images/hero-bg5.jpg" alt="image02"/></li>
-				</ul>
-				<!-- <div id="cbp-bicontrols" class="cbp-bicontrols">
-					<span class="cbp-biprev"></span>
-					<span class="cbp-bipause"></span>
-					<span class="cbp-binext"></span>
-				</div> -->
-			</div>
+            <ul id="cbp-bislideshow" class="cbp-bislideshow">
+                    <li><img src="{% static 'images/hero-bg.jpg' %}" alt="image01"/></li>
+                    <li><img src="{% static 'images/hero-bg2.jpg' %}" alt="image02"/></li>
+                    <li><img src="{% static 'images/hero-bg3.jpg' %}" alt="image02"/></li>
+                    <li><img src="{% static 'images/hero-bg4.jpg' %}" alt="image02"/></li>
+                    <li><img src="{% static 'images/hero-bg5.jpg' %}" alt="image02"/></li>
+            </ul>
+                                <!-- <div id="cbp-bicontrols" class="cbp-bicontrols">
+                                        <span class="cbp-biprev"></span>
+                                        <span class="cbp-bipause"></span>
+                                        <span class="cbp-binext"></span>
+                                </div> -->
+    </div>
   <!-- End Slider -->
 
         <div class="home-content">
@@ -67,26 +69,90 @@ $(document).ready(function(){
 
         <ul class="home-social">
             <li>
-                <a href="#" class="icon-img"><span class="width-social"><img src="images/social-icon-5.png" alt="facebook"></span><span class="hover-social-name">Facebook</span></a>
+                <a href="#" class="icon-img"><span class="width-social"><img src="{% static 'images/social-icon-5.png' %}" alt="facebook"></span><span class="hover-social-name">Facebook</span></a>
             </li>
 
             <li>
-                <a href="#" class="icon-img"><span class="width-social"><img src="images/social-icon-4.png" alt="Instagram"></span><span class="hover-social-name">Instagram</span></a>
+                <a href="#" class="icon-img"><span class="width-social"><img src="{% static 'images/social-icon-4.png' %}" alt="Instagram"></span><span class="hover-social-name">Instagram</span></a>
             </li>
             <li>
-                <a href="#" class="icon-img"><span class="width-social"><img src="images/social-icon-1.png" alt="Tripadvisor"></span><span class="hover-social-name">Tripadvisor</span></a>
+                <a href="#" class="icon-img"><span class="width-social"><img src="{% static 'images/social-icon-1.png' %}" alt="Tripadvisor"></span><span class="hover-social-name">Tripadvisor</span></a>
             </li>
             <li>
-                  <a href="#" class="icon-img"><span class="width-social"><img src="images/social-icon-2.png" alt="zomato"></span><span class="hover-social-name">Zomato</span></a>
+                  <a href="#" class="icon-img"><span class="width-social"><img src="{% static 'images/social-icon-2.png' %}" alt="zomato"></span><span class="hover-social-name">Zomato</span></a>
             </li>
             <li>
-                <a href="#" class="icon-img"><span class="width-social"><img src="images/social-icon-3.png" alt="dineout"></span><span class="hover-social-name">Dineout</span></a>
+                <a href="#" class="icon-img"><span class="width-social"><img src="{% static 'images/social-icon-3.png' %}" alt="dineout"></span><span class="hover-social-name">Dineout</span></a>
             </li>
         </ul>
         <!-- end home-social -->
 
     </section> <!-- end s-home -->
 
+
+<div class="modal fade" id="login-main">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+<div class="modal-body">
+<div class="vertical-mddl">
+<h3 class="h6 modal-heading text-center">LOGIN</h3>
+<section id="contact" class="s-contact loginmodalfrom">
+<div class="contact-content" data-aos="fade-up">
+<div class="loing-primary">
+<form method="post" action="{% url 'login' %}">
+  <fieldset>
+{% csrf_token %}
+
+<div class="form-field">
+    {{ form.username }}
+</div>
+
+
+<div class="form-field">
+    {{ form.password }}
+</div>
+<div class="form-field">
+  <button type="submit" class='full-width btn--primary'>Login</button>
+  <input type="hidden" name="next" value="{{ next }}" />
+  <div class="submit-loader">
+      <div class="text-loader">Sending...</div>
+      <div class="s-loader">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+      </div>
+  </div>
+</div>
+<fieldset>
+</form>
+{% if form.errors %}
+  Your username and password didn't match. Please try again.
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p></p>
+    {% endif %}
+{% endif %}
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 {% endblock %}
