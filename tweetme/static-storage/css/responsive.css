@@ -1,0 +1,133 @@
+@media only screen and (max-width: 360px) {
+.header-logo a {
+  width: 70px;
+}
+.home-content {
+  bottom: 30%;
+}
+.home-content__main {
+  width: 100%;
+}
+.home-content {
+  bottom: 30%;
+}
+}
+@media only screen and (min-width: 361px) and (max-width: 480px) {
+.home-content {
+  bottom: 50%;
+}
+.home-content__main {
+	text-align: center;
+	max-width: none;
+	padding-top: 15rem;
+	padding: 0 20px;
+	width: 71%;
+	margin: 0 auto;
+}
+.home-content h1 {
+    font-size: 2.5rem;
+}
+.smoothscroll.btn.btn--stroke {
+	width: 80%;
+	/* height: 55px; */
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+}
+@media only screen and (min-width: 481px) and (max-width: 640px) {
+.home-content {
+  bottom: 10%;
+}
+.home-content__main {
+	text-align: center;
+	max-width: none;
+	padding-top: 15rem;
+	padding: 0 20px;
+	width: 71%;
+	margin: 0 auto;
+}
+.home-content h1 {
+    font-size: 2.5rem;
+}
+.smoothscroll.btn.btn--stroke {
+	width: 80%;
+	/* height: 55px; */
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+.home-social {
+  margin-top: 30px;
+  right: 1.5rem;
+}
+}
+@media only screen and (max-width: 767px) {
+  .header-logo a {
+  border: medium none;
+  display: block;
+  margin: 0;
+  outline: 0 none;
+  padding: 0;
+  transition: all 0.3s ease-in-out 0s;
+  width: 60px;
+}
+.pageModal .modal-dialog {
+  max-width: 100%;
+  position: relative;
+}
+.responsive-contain-text-ab {
+  background: rgba(0, 0, 0, 0) url("../images/about-responsive.jpg") no-repeat scroll center center / cover ;
+  padding-left: 30px;
+  width: 100%;
+}
+.responsive-contain-text-rel {
+  display: none;
+}
+/* membership */
+.cardimg-l {
+	margin-right: 20px;
+	width: 128px;
+}
+.upgrd-right {
+	position: absolute;
+	right: 20px;
+	margin: 0;
+}
+.upgrd-right .heading-innerpage {
+	font-size: 18px;
+}
+.upgrdbttn {
+	padding: 12px 13px !important;
+}
+.membershipCard {
+	padding: 10px;
+}
+.modal-dialog {
+	margin: 0px auto !important;
+}
+.vertical-mddl {
+	position: relative;
+	left: 0;
+	top: 0;
+	transform: translate(-0%,-0%);
+	width: 100%;
+}
+.header-menu-toggle {
+	right: 10px;
+}
+.reservation {
+	margin-right: 60px;
+}
+.header-logo {
+	left: 15px;
+}
+.s-header {
+    height: 80px;
+
+}
+.header-menu-toggle {
+  top: 14px;
+}
+.reservation {
+  margin-top: 15px;
+}
+}

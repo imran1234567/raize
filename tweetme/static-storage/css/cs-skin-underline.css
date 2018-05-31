@@ -1,0 +1,156 @@
+
+div.cs-skin-underline {
+	background: transparent;
+	font-size: 1.8em;
+	max-width: 400px;
+}
+
+@media screen and (max-width: 30em) {
+	div.cs-skin-underline { font-size: 1.2em; }
+}
+
+.cs-skin-underline > span {
+		color: rgba(255, 255, 255, 0.3);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cs-skin-underline > span::after {
+	content: "\f107";  /* this is your text. You can also use UTF-8 character codes as I do here */
+	font-family: FontAwesome;
+	right: 0.25em;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.cs-skin-underline.cs-active > span::after {
+	-webkit-transform: translate3d(0,-50%,0) rotate3d(0,0,1,180deg);
+	transform: translate3d(0,-50%,0) rotate3d(0,0,1,180deg);
+}
+
+.cs-skin-underline .cs-options {
+	background: rgba(212,170,19,0.98);
+	background: -moz-linear-gradient(left, rgba(212,170,19,0.98) 0%, rgba(41,41,41,0.91) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,170,19,0.98)), color-stop(100%, rgba(41,41,41,0.91)));
+	background: -webkit-linear-gradient(left, rgba(212,170,19,0.98) 0%, rgba(41,41,41,0.91) 100%);
+	background: -o-linear-gradient(left, rgba(212,170,19,0.98) 0%, rgba(41,41,41,0.91) 100%);
+	background: -ms-linear-gradient(left, rgba(212,170,19,0.98) 0%, rgba(41,41,41,0.91) 100%);
+	background: linear-gradient(to right, rgba(212,170,19,0.98) 0%, rgba(41,41,41,0.91) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4aa13', endColorstr='#292929', GradientType=1 );
+
+	opacity: 0;
+	-webkit-transition: opacity 0.3s 0.4s, visibility 0s 0.7s;
+	transition: opacity 0.3s 0.4s, visibility 0s 0.7s;
+	border-radius: 0 0 2px 2px;
+}
+
+.cs-skin-underline.cs-active .cs-options {
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.cs-skin-underline ul span {
+	position: relative;
+	text-transform: capitalize;
+	opacity: 0;
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	height: auto;
+	padding: 6px 10px;
+	color: #000;
+	border: none;
+}
+
+.cs-select ul span::after {
+	content: '';
+	opacity: 0;
+}
+
+.cs-select .cs-selected span::after {
+	content: "\f14a";  /* this is your text. You can also use UTF-8 character codes as I do here */
+	font-family: FontAwesome;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s 0.7s;
+	transition: opacity 0.3s 0.7s;
+}
+
+.cs-skin-underline ul span::before {
+	content: '';
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	height: 1px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.2);
+	-webkit-transform: translate3d(200%,0,0);
+	transform: translate3d(200%,0,0);
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.cs-skin-underline.cs-active ul span,
+.cs-skin-underline.cs-active ul span::before {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.cs-skin-underline li:nth-child(5) span,
+.cs-skin-underline li:nth-child(5) span::before,
+.cs-skin-underline.cs-active li:first-child span,
+.cs-skin-underline.cs-active li:first-child span::before {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+.cs-skin-underline li:nth-child(4) span,
+.cs-skin-underline li:nth-child(4) span::before,
+.cs-skin-underline.cs-active li:nth-child(2) span,
+.cs-skin-underline.cs-active li:nth-child(2) span::before {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+.cs-skin-underline li:nth-child(3) span,
+.cs-skin-underline li:nth-child(3) span::before {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+.cs-skin-underline li:nth-child(2) span,
+.cs-skin-underline li:nth-child(2) span::before,
+.cs-skin-underline.cs-active li:nth-child(4) span,
+.cs-skin-underline.cs-active li:nth-child(4) span::before {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+.cs-skin-underline li:first-child span,
+.cs-skin-underline li:first-child span::before,
+.cs-skin-underline.cs-active li:nth-child(5) span,
+.cs-skin-underline.cs-active li:nth-child(5) span::before {
+	-webkit-transition-delay: 0.2s;
+	transition-delay: 0.2s;
+} /* more items require more delay declarations */
+
+.cs-skin-underline .cs-options li span:hover,
+.cs-skin-underline .cs-options li.cs-focus span,
+.cs-skin-underline li.cs-selected span {
+	color: #000;
+	background: rgba(242,191,22,1);
+	background: -moz-linear-gradient(left, rgba(242,191,22,1) 0%, rgba(184,184,184,0.91) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(242,191,22,1)), color-stop(100%, rgba(184,184,184,0.91)));
+	background: -webkit-linear-gradient(left, rgba(242,191,22,1) 0%, rgba(184,184,184,0.91) 100%);
+	background: -o-linear-gradient(left, rgba(242,191,22,1) 0%, rgba(184,184,184,0.91) 100%);
+	background: -ms-linear-gradient(left, rgba(242,191,22,1) 0%, rgba(184,184,184,0.91) 100%);
+	background: linear-gradient(to right, rgba(242,191,22,1) 0%, rgba(184,184,184,0.91) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2bf16', endColorstr='#b8b8b8', GradientType=1 );
+	cursor: pointer;
+}
+
+
+.cs-options li {
+	padding: 0;
+}

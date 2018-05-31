@@ -1,37 +1,74 @@
-<nav class="navbar navbar-default">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{% url 'home' %}">Raize</a>
+{% load static %}
+
+<!-- header
+================================================== -->
+<header class="s-header">
+
+    <div class="header-logo">
+        <a class="site-logo" href="{% url 'home' %}">
+            <img src="{% static 'images/logo.png'%}" alt="Homepage">
+        </a>
     </div>
-    {% include "tweets/search_form.html" %}
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      {% if request.user.is_authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ request.user.profile.get_absolute_url }}">Profile</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
 
-      {% else %}
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'login' %}">Login</a></li>
-         <li><a href="{% url 'register' %}">Register</a></li>
-      </ul>
-      {% endif %}
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    <nav class="header-nav">
 
+        <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+        <div class="header-nav__content">
+          {% if request.user.is_authenticated %}
+            <h3><a href="{{ request.user.profile.get_absolute_url }}">Profile</a></h3>
+            <h3><a href="{% url 'logout' %}">Logout</a></h3>
+          {% else %}
+          <h3><a href="#login" data-toggle="modal" data-target="#login-main" >Login</a></h3>
+          <h3><a href="{% url 'register' %}">Register</a></h3>
+          {% endif %}
+            <ul class="header-nav__list">
+                <li><a href="#about" data-toggle="modal" data-target="#membership" title="Membership">About</a></li>
+                <li><a href="#membership" data-toggle="modal" data-target="#membership" title="Membership">Membership</a></li>
+                <li><a href="#works" title="Menu">Menu</a></li>
+                <li><a href="#clients" title="Our Brewery">Our Brewery</a></li>
+                <li><a href="#" title="Reservation">Reservation</a></li>
+                <li><a href="#contact" title="Offers & Events">Offers & Events</a></li>
+                <li><a href="#contact" title="Gallery">Gallery</a></li>
+                <li><a href="#contact" title="Fun & Frolic">Fun & Frolic</a></li>
+                <li><a href="#contact" title="Media & Blogs">Media & Blogs</a></li>
+                <li><a href="#contact" title="Contact">Contact</a></li>
+
+            </ul>
+
+
+
+            <ul class="header-nav__social">
+
+                <li>
+                    <a href="#"><img src="{% static 'images/social-icon-5.png'%}" alt="facebook"></a>
+                </li>
+
+                <li>
+                    <a href="#"><img src="{% static 'images/social-icon-4.png' %}" alt="Instagram"></a>
+                </li>
+                <li>
+                    <a href="#"><img src=" {% static 'images/social-icon-1.png' %}" alt="Tripadvisor"></a>
+                </li>
+                <li>
+                      <a href="#"><img src="{% static 'images/social-icon-2.png' %}" alt="zomato"></a>
+                </li>
+                <li>
+                      <a href="#"><img src="{% static 'images/social-icon-3.png' %}" alt="dineout"></a>
+                </li>
+            </ul>
+
+        </div> <!-- end header-nav__content -->
+
+    </nav>  <!-- end header-nav -->
+  <div class="reservation">
+    <a href="#" class="reservation-bttn"><img src="{% static 'images/phone.png' %}" alt=""> <span>+ 9164564533</span></a>
+  </div>
+
+
+    <a class="header-menu-toggle" href="#0">
+        <span class="header-menu-text"></span>
+        <span class="header-menu-icon"></span>
+    </a>
+
+</header> <!-- end s-header -->
