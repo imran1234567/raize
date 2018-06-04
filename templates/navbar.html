@@ -16,11 +16,11 @@
 
         <div class="header-nav__content">
           {% if request.user.is_authenticated %}
-            <h3><a href="{{ request.user.profile.get_absolute_url }}">Profile</a></h3>
-            <h3><a href="{% url 'logout' %}">Logout</a></h3>
+            <h3><a href="{{ request.user.profile.get_absolute_url }}" style="color:#fbcf0f;">Profile</a></h3>
+            <h3><a href="{% url 'logout' %}" style="color:#fbcf0f;">Logout</a></h3>
           {% else %}
-          <h3><a href="#login" data-toggle="modal" data-target="#login-main" >Login</a></h3>
-          <h3><a href="{% url 'register' %}">Register</a></h3>
+          <h3><a href="#login" data-toggle="modal" data-target="#login-main" style="color:#fbcf0f;" >Login</a></h3>
+          <h3><a href="{% url 'register' %}" style="color:#fbcf0f;">Register</a></h3>
           {% endif %}
             <ul class="header-nav__list">
                 <li><a href="#about" data-toggle="modal" data-target="#membership" title="Membership">About</a></li>

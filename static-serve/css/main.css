@@ -2994,8 +2994,8 @@ html.no-csstransitions .home-content__main {
     max-width: 1000px;
     background-color: rgba(0, 0, 0, 0.2);
     color: rgba(255, 255, 255, 0.4);
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
     font-family: "montserrat-light", sans-serif;
     font-size: 1.5rem;
     line-height: 2;
@@ -3482,7 +3482,7 @@ footer .row {
 /* new css Bijoyan */
 .loing-primary {
 	width: 100%;
-	padding: 30px;
+	padding: 30px 40px;
 }
 .loginmodalfrom{
   padding: 0;

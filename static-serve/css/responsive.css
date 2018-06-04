@@ -130,4 +130,18 @@
 .reservation {
   margin-top: 15px;
 }
+.loing-primary {
+	width: 100%;
+	padding: 30px 10px;
+}
+}
+@media only screen and (min-width: 1600px) {
+.loing-primary {
+	width: 80%;
+	padding: 30px;
+	margin: 0 auto;
+}
+.h6.modal-heading.text-center {
+	margin-top: 100px;
+}
 }
