@@ -10,7 +10,7 @@ div.cs-skin-underline {
 }
 
 .cs-skin-underline > span {
-		color: rgba(255, 255, 255, 0.3);
+		color: rgba(255, 255, 255, 0.4);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 

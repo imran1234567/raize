@@ -23,7 +23,7 @@
           <h3><a href="{% url 'register' %}" style="color:#fbcf0f;">Register</a></h3>
           {% endif %}
             <ul class="header-nav__list">
-                <li><a href="#about" data-toggle="modal" data-target="#membership" title="Membership">About</a></li>
+                <li><a href="{% url 'about' %}" title="Membership">About</a></li>
                 <li><a href="#membership" data-toggle="modal" data-target="#membership" title="Membership">Membership</a></li>
                 <li><a href="#works" title="Menu">Menu</a></li>
                 <li><a href="#clients" title="Our Brewery">Our Brewery</a></li>
@@ -72,3 +72,7 @@
     </a>
 
 </header> <!-- end s-header -->
+
+
+
+
