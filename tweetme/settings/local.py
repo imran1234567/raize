@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['52.15.118.76','127.0.0.1']
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
      'hashtags',
     'tweets',
     'memberships',
+    'widget_tweaks',
 
 
 ]
@@ -62,7 +64,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'tweetme.urls'
-LOGIN_URL = "/login/"
+LOGIN_URL = "/home/"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = LOGIN_REDIRECT_URL
 

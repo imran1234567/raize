@@ -25,7 +25,7 @@ from hashtags.api.views import TagTweetAPIView
 from hashtags.views import HashTagView
 from tweets.api.views import SearchTweetAPIView
 from tweets.views import TweetListView
-from .views import home, SearchView, about
+from .views import home, SearchView, about, contact,home
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls), #admin/
@@ -40,6 +40,8 @@ urlpatterns = [
     url(r'^register/$', UserRegisterView.as_view(), name='register'), #/
     url(r'^', include('django.contrib.auth.urls')),
     url(r'^about', about, name='about'),
+    url(r'^home', home, name='home'),
+    url(r'^contact', contact, name='contact'),
     url(r'^memberships/', include('memberships.urls', namespace='membership')),
     url(r'^', include('accounts.urls', namespace='profiles')),
 ]

@@ -19,8 +19,8 @@
             <h3><a href="{{ request.user.profile.get_absolute_url }}" style="color:#fbcf0f;">Profile</a></h3>
             <h3><a href="{% url 'logout' %}" style="color:#fbcf0f;">Logout</a></h3>
           {% else %}
-          <h3><a href="#login" data-toggle="modal" data-target="#login-main" style="color:#fbcf0f;" >Login</a></h3>
-          <h3><a href="{% url 'register' %}" style="color:#fbcf0f;">Register</a></h3>
+          <h3><a href="{% url 'login' %}" style="color:#fbcf0f;" >Login</a></h3>
+          <h3><a href="{% url 'register' %}" style="color:#fbcf0f;">Apply Membership</a></h3>
           {% endif %}
             <ul class="header-nav__list">
                 <li><a href="{% url 'about' %}" title="Membership">About</a></li>
@@ -72,6 +72,8 @@
     </a>
 
 </header> <!-- end s-header -->
+
+
 
 
 

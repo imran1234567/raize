@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+<section class="inner-page">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h3 class="h6 modal-heading text-center">Apply Membership</h3>
+                    <section id="contact" class="s-contact loginmodalfrom">
+                        <div class="contact-content" data-aos="fade-up">
+                            <form action="" method="post" class="form">
+                                {% csrf_token %}
+                                <fieldset>
+                                    <div class="form-field">
+                                       {% render_field form.name class="full-width" placeholder=form.name.label %}
+                                    </div>
+
+                                    <div class="form-field">
+                                        {% render_field form.contact_no class="full-width" placeholder=form.contact_no.label %}
+                                    </div>
+
+                                    <div class="form-field">
+                                        {% render_field form.email class="full-width" placeholder=form.email.label %}
+                                    </div>
+
+                                    <div class="form-field">
+                                        {% render_field form.address class="full-width" placeholder=form.address.label %}
+                                    </div>
+
+                                    <div class="form-field">
+                                        {% render_field form.dob class="full-width" placeholder=form.dob.label %}
+                                    </div>
+
+                                    <div class="form-field">
+                                        {% render_field form.aniversary_date class="full-width" placeholder=form.aniversary_date.label %}
+                                    </div>
+
+                                    <div class="form-field">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                {% render_field form.material_status class="full-width" placeholder=form.material_status.label %}
+                                            </div>
+                                            <div class="col-md-6">
+                                                {% render_field form.food_pref class="full-width" placeholder=form.food_pref.label %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <button type="submit" value="" class="full-width btn--primary">Complete Your Application</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+{% endblock content %}

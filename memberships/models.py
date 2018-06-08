@@ -1,7 +1,10 @@
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.db import models
 from django.forms import TextInput
+from django.utils import timezone
+
 # Create your models here.
 
 class Membership(models.Model):
@@ -27,9 +30,9 @@ class Membership(models.Model):
     (SILVER, 'Silver'),
     (PLATINUM, 'Platinum'),
     )
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=10)
     contact_no = models.CharField(max_length=10)
-    email_id = models.EmailField(max_length=170)
+    email = models.EmailField(max_length=170)
     address = models.CharField(max_length=255)
     dob = models.DateField(max_length=8)
     aniversary_date = models.DateField(max_length=8)
@@ -39,4 +42,4 @@ class Membership(models.Model):
 
 
     def __str__(self):
-        return str(self.name)
+        return str(self.email)

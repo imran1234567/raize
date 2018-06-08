@@ -61,6 +61,7 @@ class Tweet(models.Model):
     updated     = models.DateTimeField(auto_now=True)
     timestamp   = models.DateTimeField(auto_now_add=True)
 
+
     objects = TweetManager()
 
     def __str__(self):
@@ -111,6 +112,8 @@ def tweet_save_receiver(sender, instance, created, *args, **kwargs):
 
 
 post_save.connect(tweet_save_receiver, sender=Tweet)
+
+
 
 
 

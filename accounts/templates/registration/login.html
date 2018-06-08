@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load widget_tweaks %}
 {% load static %}
 
 {% block script %}
@@ -15,93 +15,15 @@ $(document).ready(function(){
 
 
 {% block content %}
-<!-- home
-    ================================================== -->
-    <section>
-      <!-- Slider -->
-      <div class="main">
-            <ul id="cbp-bislideshow" class="cbp-bislideshow">
-                    <li><img src="{% static 'images/hero-bg.jpg' %}" alt="image01"/></li>
-                    <li><img src="{% static 'images/hero-bg2.jpg' %}" alt="image02"/></li>
-                    <li><img src="{% static 'images/hero-bg3.jpg' %}" alt="image02"/></li>
-                    <li><img src="{% static 'images/hero-bg4.jpg' %}" alt="image02"/></li>
-                    <li><img src="{% static 'images/hero-bg5.jpg' %}" alt="image02"/></li>
-            </ul>
-                                <!-- <div id="cbp-bicontrols" class="cbp-bicontrols">
-                                        <span class="cbp-biprev"></span>
-                                        <span class="cbp-bipause"></span>
-                                        <span class="cbp-binext"></span>
-                                </div> -->
-    </div>
-  <!-- End Slider -->
 
-        <div class="home-content">
+<section class="inner-page">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="vertical-mddl">
 
-            <div class="home-content__main">
-
-                <h3>Welcome to Raize The Bar</h3>
-
-                <h1>
-                    Rejoice a serious love for Beer
-                </h1>
-
-                <div class="home-content__buttons">
-                    <a href="#contact" class="smoothscroll btn btn--stroke">
-                        Menu
-                    </a>
-                    <a href="#about" class="smoothscroll btn btn--stroke">
-                      Book Your Table
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- <div class="home-content__scroll">
-                <a href="#about" class="scroll-link smoothscroll">
-                    <span>Scroll Down</span>
-                </a>
-            </div>
-
-            <div class="home-content__line"></div> -->
-
-        </div> <!-- end home-content -->
-
-
-        <ul class="home-social">
-            <li>
-                <a href="#" class="icon-img"><span class="width-social"><img src="{% static 'images/social-icon-5.png' %}" alt="facebook"></span><span class="hover-social-name">Facebook</span></a>
-            </li>
-
-            <li>
-                <a href="#" class="icon-img"><span class="width-social"><img src="{% static 'images/social-icon-4.png' %}" alt="Instagram"></span><span class="hover-social-name">Instagram</span></a>
-            </li>
-            <li>
-                <a href="#" class="icon-img"><span class="width-social"><img src="{% static 'images/social-icon-1.png' %}" alt="Tripadvisor"></span><span class="hover-social-name">Tripadvisor</span></a>
-            </li>
-            <li>
-                  <a href="#" class="icon-img"><span class="width-social"><img src="{% static 'images/social-icon-2.png' %}" alt="zomato"></span><span class="hover-social-name">Zomato</span></a>
-            </li>
-            <li>
-                <a href="#" class="icon-img"><span class="width-social"><img src="{% static 'images/social-icon-3.png' %}" alt="dineout"></span><span class="hover-social-name">Dineout</span></a>
-            </li>
-        </ul>
-        <!-- end home-social -->
-
-    </section> <!-- end s-home -->
-
-
-<div class="modal fade" id="login-main">
-<div class="modal-dialog modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-     <span aria-hidden="true">&times;</span>
-   </button>
- </div>
-<div class="modal-body">
-<div class="vertical-mddl">
-<h3 class="h6 modal-heading text-center">LOGIN</h3>
-<section id="contact" class="s-contact loginmodalfrom">
+          <h3 class="h6 modal-heading text-center">Login</h3>
+            <section id="contact" class="s-contact loginmodalfrom">
 <div class="contact-content" data-aos="fade-up">
 <div class="loing-primary">
 <form method="post" action="{% url 'login' %}">
@@ -109,12 +31,12 @@ $(document).ready(function(){
 {% csrf_token %}
 
 <div class="form-field">
-    {{ form.username }}
+    {% render_field form.username class="full-width" placeholder=form.username.label %}
 </div>
 
 
 <div class="form-field">
-    {{ form.password }}
+    {% render_field form.password class="full-width" placeholder=form.password.label %}
 </div>
 <div class="form-field">
   <button type="submit" class='full-width btn--primary'>Login</button>
@@ -131,7 +53,9 @@ $(document).ready(function(){
 <fieldset>
 </form>
 {% if form.errors %}
+<div class="message-warning">
   Your username and password didn't match. Please try again.
+</div>
 {% endif %}
 
 {% if next %}
@@ -148,11 +72,14 @@ $(document).ready(function(){
 </div>
 </div>
 </section>
-</div>
-</div>
-</div>
-</div>
-</div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
 
 
 {% endblock %}

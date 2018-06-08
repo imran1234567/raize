@@ -9,6 +9,9 @@ def home(request):
 def about(request):
     return render(request, "about.html", {})
 
+def contact(request):
+    return render(request, "contact.html", {})
+
 User = get_user_model()
 
 class SearchView(View):

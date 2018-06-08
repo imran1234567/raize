@@ -7,14 +7,40 @@
 
 
 {% block content %}
-<div class='row'>
-    <div class='col-sm-6 col-sm-offset-3'>
-        <h1>Register</h1>
-                <form class='form {% if form_class %}{{ form_class }}{% endif %}' method='POST' action="{% if action_url %}{{ action_url }}{% endif %}">
-           {% csrf_token %}
-            {{ form|crispy }}
-            <input class='btn btn-primary' type="submit" value="Register" />
-        </form>
+
+<section class="inner-page">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+
+                <h3 class="h6 modal-heading text-center">Apply Membership</h3>
+                <section id="contact" class="s-contact loginmodalfrom">
+                    <div class="contact-content" data-aos="fade-up">
+                        <div class="loing-primary">
+                            <form class='form {% if form_class %}{{ form_class }}{% endif %}' method='POST' action="{% if action_url %}{{ action_url }}{% endif %}">
+                                <fieldset>
+
+                                    {% csrf_token %}
+                                    <div class="form-field">
+                                        <input type="text" name="username" required="" class="full-width" id="id_username" placeholder="Please enter your name">
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="email" name="email" required="" class="emailinput full-width" id="id_email" placeholder="Please enter your email">
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="password" name="password" required="" class="full-width" id="id_password" placeholder="Please enter password">
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="password" name="password2" required="" class="full-width" id="id_password2" placeholder="Confirm password">
+                                    </div>
+                                    <button type="submit" class="full-width btn--primary">Apply Membership</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 {% endblock content %}

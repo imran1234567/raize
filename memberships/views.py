@@ -1,7 +1,16 @@
 from django.shortcuts import render
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, CreateView
+from .forms import MembershipModelForm
 from .models import Membership
+from .mixins import FormUserNeededMixin, UserOwnerMixin
 # Create your views here.
+
+
+class MembershipCreateView(CreateView):
+    # queryset = Membership.object.all()
+    form_class = MembershipModelForm
+    template_name = 'memberships/create_view.html'
+    success_url = "/login/#login"
 
 
 class MembershipDetailView(DetailView):

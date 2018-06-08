@@ -8,6 +8,7 @@ from .views import (
     )
 
 urlpatterns = [
+
     # url(r'^$', RedirectView.as_view(url="/")), 
     # url(r'^search/$', TweetListView.as_view(), name='list'), # /tweet/
     # url(r'^create/$', TweetCreateView.as_view(), name='create'), # /tweet/create/
