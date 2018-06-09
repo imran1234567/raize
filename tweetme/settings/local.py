@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'rest_framework',
+    'bootstrap_datepicker',
 
     'accounts',
      'hashtags',

@@ -31,12 +31,12 @@ $(document).ready(function(){
 {% csrf_token %}
 
 <div class="form-field">
-    {% render_field form.username class="full-width" placeholder=form.username.label %}
+    {% render_field form.username class="full-width" placeholder=form.username.label autofill="off" %}
 </div>
 
 
 <div class="form-field">
-    {% render_field form.password class="full-width" placeholder=form.password.label %}
+    {% render_field form.password class="full-width" placeholder=form.password.label autofill="off" %}
 </div>
 <div class="form-field">
   <button type="submit" class='full-width btn--primary'>Login</button>

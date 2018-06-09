@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load widget_tweaks %}
-
+{% load static %}
 {% block content %}
 <section class="inner-page">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -9,52 +9,60 @@
                     <h3 class="h6 modal-heading text-center">Apply Membership</h3>
                     <section id="contact" class="s-contact loginmodalfrom">
                         <div class="contact-content" data-aos="fade-up">
-                            <form action="" method="post" class="form">
+                            <div class="loing-primary">
+                                <form action="" method="post" class="form">
                                 {% csrf_token %}
                                 <fieldset>
                                     <div class="form-field">
-                                       {% render_field form.name class="full-width" placeholder=form.name.label %}
+                                       {% render_field form.name class="full-width" placeholder="Full Name" autocomplete="off" %}
                                     </div>
 
                                     <div class="form-field">
-                                        {% render_field form.contact_no class="full-width" placeholder=form.contact_no.label %}
+                                        {% render_field form.contact_no class="full-width" placeholder=form.contact_no.label autocomplete="off"%}
                                     </div>
 
                                     <div class="form-field">
-                                        {% render_field form.email class="full-width" placeholder=form.email.label %}
+                                        {% render_field form.email class="full-width" placeholder=form.email.label autocomplete="off" %}
                                     </div>
 
                                     <div class="form-field">
-                                        {% render_field form.address class="full-width" placeholder=form.address.label %}
-                                    </div>
-
-                                    <div class="form-field">
-                                        {% render_field form.dob class="full-width" placeholder=form.dob.label %}
-                                    </div>
-
-                                    <div class="form-field">
-                                        {% render_field form.aniversary_date class="full-width" placeholder=form.aniversary_date.label %}
+                                        {% render_field form.address class="full-width" placeholder=form.address.label autocomplete="off" %}
                                     </div>
 
                                     <div class="form-field">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                {% render_field form.material_status class="full-width" placeholder=form.material_status.label %}
+                                                {% render_field form.dob  class="full-width" placeholder=form.dob.label id="datepicker" autocomplete="off" %}
                                             </div>
                                             <div class="col-md-6">
-                                                {% render_field form.food_pref class="full-width" placeholder=form.food_pref.label %}
+                                              {% render_field form.aniversary_date  class="full-width" placeholder=form.aniversary_date.label id="datepicker1" autocomplete="off"%}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-field">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                {% render_field form.material_status class="cs-select cs-skin-underline" placeholder=form.material_status.label autocomplete="off" %}
+                                            </div>
+                                            <div class="col-md-6">
+                                                {% render_field form.food_pref class="cs-select cs-skin-underline" placeholder=form.food_pref.label autocomplete="off" %}
                                             </div>
                                         </div>
                                     </div>
                                 </fieldset>
                                 <button type="submit" value="" class="full-width btn--primary">Complete Your Application</button>
                             </form>
+                            </div>
                         </div>
                     </section>
                 </div>
             </div>
         </div>
 </section>
+
+
+
 
 
 {% endblock content %}

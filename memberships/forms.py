@@ -1,10 +1,12 @@
 from django import forms
-
 from .models import Membership
+
+
 
 class MembershipModelForm(forms.ModelForm):
     class Meta:
         model = Membership
+
         fields = [
             "name",
             "contact_no",
@@ -15,3 +17,10 @@ class MembershipModelForm(forms.ModelForm):
             "material_status",
             "food_pref",
         ]
+
+
+
+
+
+
+
